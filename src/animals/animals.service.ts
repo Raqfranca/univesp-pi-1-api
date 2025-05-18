@@ -15,10 +15,10 @@ export class AnimalsService {
     return this.animalModel.find().exec();
   }
 
-  async findById(id: string): Promise<Animal | null> {
-    return this.animalModel.findById(id).exec();
+  async findByUserId(userId: string): Promise<Animal | null> {
+    return this.animalModel.findOne({ user_id: userId }).exec();
   }
-  
+    
   async update(id: string, data: Partial<Animal>): Promise<Animal | null> {
     return this.animalModel.findByIdAndUpdate(id, data, { new: true }).exec();
   }

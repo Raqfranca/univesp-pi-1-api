@@ -18,7 +18,7 @@ export class AnimalsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.animalsService.findById(id);
+    return this.animalsService.findByUserId(id);
   }
 
   @Put(':id')
